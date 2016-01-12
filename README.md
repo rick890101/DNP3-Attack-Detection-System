@@ -1,16 +1,18 @@
-#DNP3 Dissector for Scapy
+#DNP3 Attack Detection System for Scapy
 
 The Distributed Network Protocol (DNP3) is defined in [IEEE Std 1815](https://standards.ieee.org/findstds/standard/1815-2012.html) for the purpose of distributing event data for operation on a variety of communication media consistent with the makeup of most electric power communication systems.
 
-This project is work-in-progress by the Queensland University of Technology(QUT) [Information Security discipline](https://www.qut.edu.au/science-engineering/our-schools/school-of-electrical-engineering-and-computer-science/information-security) and was developed to study cyber attacks on DNP3 critical infrustrcutre. The work can be demonstrated in our paper, [Real-Time and Interactive Attacks on DNP3 Critical Infrastructure Using Scapy](http://crpit.com/confpapers/CRPITV161Rodofile.pdf), published in the CRPIT and Presented at the Australasian Information Security Conference (AISC 2015) in Sydney Australia.  
+In this project we use the DNP3 libraries for Scapy to build a simple packet dissector that tries to detect anomalous DNP3 traffic by analysing its parameters. 
 
-If you use this code in any academic work, it would be very much appreciated if you cite our papers.
+The program sniffs all traffic in eth0 interface and works in a similar way that an IDS, reporting suspicious events. Aditionally, there is a system that stores global alarm state and gives feedback to the user.
 
 Please note that this code depends on the [scapy](http://www.secdev.org/projects/scapy/doc/index.html) library.
 
-For more [QUT Information Security projects](http://qut-infosec.github.io/), visit our Github Repository.
+Usage:
 
-##License
+sudo ./sniff.py 
+
+##License of DNP3_Lib
 Copyright 2014-2016 N.R Rodofile
 
 Licensed under the GPLv3.
