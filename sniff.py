@@ -12,7 +12,7 @@ import sys
 import time
 import math
 import threading
-import ConfigParser 
+import configparser 
 import collections
 
 from scapy.all import * # Scapy dependences
@@ -249,7 +249,7 @@ if __name__ == "__main__":
 
     ''' Initializations '''
 
-    config=ConfigParser.ConfigParser() #Reference values in config.ini
+    config=configparser.ConfigParser() #Reference values in config.ini
     config.read("config.ini")  
 
     pkt_counter = 0
@@ -262,7 +262,7 @@ if __name__ == "__main__":
     for i in range (131):
         appfunction_code_counter.append(0)
 
-    windowLength = int(config.get('Constants','windowLength'))   
+    windowLength = int(config.get('Constants','windowLength'))
     dnp3_port = config.get('Constants','dnp3_port') #Port assigned to DNP3
 
     IPRangeWindow = collections.deque(maxlen = windowLength)
@@ -300,7 +300,7 @@ if __name__ == "__main__":
 
     ''' Sniffing and call to pkt_action function '''
 
-    print 'Sniffing process started. To stop it, press Ctrl+C'
+    print('Sniffing process started. To stop it, press Ctrl+C')
 
     alarmSystem.initialize()
 
@@ -312,8 +312,8 @@ if __name__ == "__main__":
 
         stop_time = time.time()
 
-        print '\nSniffer stopped by keystroke.'
-        print '\n#### Final results ####'
+        print('\nSniffer stopped by keystroke.')
+        print('\n#### Final results ####')
         
         if pkt_counter == 0:
             print ('No packets sniffed in', 
@@ -327,12 +327,12 @@ if __name__ == "__main__":
             UDP_percent = ((resultsDisplay.divide_float(UDP_counter,
                                                         pkt_counter))*100)
 
-            print 'Time elapsed:', round((stop_time-init_time),3), 'seconds.'
-            print 'Packets sniffed:', pkt_counter
-            print '- IP packets:', IP_counter, 'Percent:', IP_percent,'%'
-            print '---- TCP packets:', TCP_counter, 'Percent:', TCP_percent,'%'
-            print '---- UDP packets:', UDP_counter, 'Percent:', UDP_percent,'%'
-            print 'DNP3 messages:', DNP3_counter
+            print('Time elapsed:', round((stop_time-init_time),3), 'seconds.')
+            print('Packets sniffed:', pkt_counter)
+            print ('- IP packets:', IP_counter, 'Percent:', IP_percent,'%')
+            print ('---- TCP packets:', TCP_counter, 'Percent:', TCP_percent,'%')
+            print ('---- UDP packets:', UDP_counter, 'Percent:', UDP_percent,'%')
+            print ('DNP3 messages:', DNP3_counter)
             resultsDisplay.appFunctionCode(appfunction_code_counter)
             
 

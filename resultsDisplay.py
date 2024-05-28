@@ -8,11 +8,12 @@ def appFunctionCode(appFunctionCodeList):
     '''Function that shows the name and number of Application Layer
        function codes sniffed'''
     
-    print '\nDNP3 Application Layer Function Codes:'
+    print('\nDNP3 Application Layer Function Codes:')
+
     for i in range (131):
         if appFunctionCodeList[i] != 0:
-            print DNP3_Lib.applicationFunctionCode[i], \
-                   ':', appFunctionCodeList[i]
+            print(DNP3_Lib.applicationFunctionCode[i], \
+                   ':', appFunctionCodeList[i])
 
 
 def divide_float(op1,op2):

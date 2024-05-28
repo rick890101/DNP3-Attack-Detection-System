@@ -14,11 +14,11 @@ def alarm_FSM(previous_state, alarm):
     elif previous_state == "Critical":
         current_state = critical_transition(alarm)
     else:
-        print 'Critical error. Not valid alarm status!'
+        print('Critical error. Not valid alarm status!')
         sys.exit()
 
-    print 'EVENT:\tCurrent alarm status is:', \
-           current_state, '\t', datetime.datetime.now()
+    print('EVENT:\tCurrent alarm status is:', \
+           current_state, '\t', datetime.datetime.now())
 
     return current_state
 
