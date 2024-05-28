@@ -1,4 +1,4 @@
-#DNP3 Attack Detection System for Scapy
+# DNP3 Attack Detection System for Scapy
 
 The Distributed Network Protocol (DNP3) is defined in [IEEE Std 1815](https://standards.ieee.org/findstds/standard/1815-2012.html) for the purpose of distributing event data for operation on a variety of communication media consistent with the makeup of most electric power communication systems.
 
@@ -10,9 +10,12 @@ Please note that this code depends on the [scapy](http://www.secdev.org/projects
 
 Usage:
 
+```shell=
 sudo ./sniff.py 
+```
 
-##License of DNP3_Lib
+## License of DNP3_Lib
+
 Copyright 2014-2016 N.R Rodofile
 
 Licensed under the GPLv3.
